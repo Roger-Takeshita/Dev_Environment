@@ -13,9 +13,11 @@
   - [Node.js](#nodejs)
     - [Nodemon](#nodemon)
   - [PostgreSQL](#postgresql)
+    - [Import Entire DB](#import-entire-db)
   - [MongoDB](#mongodb)
     - [Start MongoDB Service](#start-mongodb-service)
     - [Stop MongoDB Service](#stop-mongodb-service)
+    - [Import Dump](#import-dump)
   - [Python3](#python3)
     - [Django](#django)
 
@@ -345,6 +347,14 @@ Start PostgreSQL
   brew services start postgresql
 ```
 
+### Import Entire DB
+
+[Go Back to Contents](#contents)
+
+```Bash
+  psql -f path/dumpfile.sql postgres
+```
+
 ## MongoDB
 
 [Go Back to Contents](#contents)
@@ -375,6 +385,14 @@ Install the latest available production release of MongoDB Community Server
 
 ```Bash
   brew services stop mongodb-community
+```
+
+### Import Dump
+
+[Go Back to Contents](#contents)
+
+```Bash
+  mongorestore /Users/roger-that/Desktop/MongoDB
 ```
 
 ## Python3
