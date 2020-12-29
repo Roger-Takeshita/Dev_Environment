@@ -109,6 +109,13 @@ Install [Oh-My-Zsh](https://ohmyz.sh/#install) to install custom zsh themes
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Fix oh-my-zsh permissions
+
+```Bash
+  compaudit | xargs chmod g-w,o-w /usr/local/share/zsh
+  compaudit | xargs chmod g-w,o-w /usr/local/share/zsh/site-functions
+```
+
 Update `~/.zshrc` file
 
 ```Bash
@@ -248,8 +255,8 @@ Download `powerline` [fonts](https://github.com/powerline/fonts)
 
 Download and install [iTerm2](https://iterm2.com/)
 
-- [Config Tutorial](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
-- [Themes](https://iterm2colorschemes.com/)
+-   [Config Tutorial](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
+-   [Themes](https://iterm2colorschemes.com/)
 
 ## Git
 
