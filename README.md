@@ -11,6 +11,7 @@
   - [Git](#git)
     - [Gitconfig](#gitconfig)
   - [Node.js](#nodejs)
+    - [NVM (Node Version Manager)](#nvm-node-version-manager)
     - [Nodemon](#nodemon)
   - [PostgreSQL](#postgresql)
     - [Import Entire DB](#import-entire-db)
@@ -18,6 +19,7 @@
     - [Start MongoDB Service](#start-mongodb-service)
     - [Stop MongoDB Service](#stop-mongodb-service)
     - [Import Dump](#import-dump)
+    - [Roto 3T](#roto-3t)
   - [Python3](#python3)
     - [Django](#django)
 
@@ -257,8 +259,8 @@ Download `powerline` [fonts](https://github.com/powerline/fonts)
 
 Download and install [iTerm2](https://iterm2.com/)
 
--   [Config Tutorial](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
--   [Themes](https://iterm2colorschemes.com/)
+- [Config Tutorial](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
+- [Themes](https://iterm2colorschemes.com/)
 
 ## Git
 
@@ -320,6 +322,25 @@ Check node version
   npm -v
   # 7.3.0
 ```
+
+### NVM (Node Version Manager)
+
+[Go Back to Contents](#contents)
+
+- [Repo](https://github.com/nvm-sh/nvm)
+
+```Bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+```
+
+In `~/.zshrc`
+
+- Add the following lines
+
+  ```Bash
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  ```
 
 ### Nodemon
 
@@ -394,6 +415,20 @@ Install the latest available production release of MongoDB Community Server
 ```Bash
   mongorestore /Users/roger-that/Desktop/MongoDB
 ```
+
+### Roto 3T
+
+[Go Back to Contents](#contents)
+
+MongoDB Atlas Connection
+
+![](https://i.imgur.com/VghSgOE.png)
+
+![](https://i.imgur.com/sXhlMLb.png)
+
+![](https://i.imgur.com/fkTJViL.png)
+
+![](https://i.imgur.com/IMuwA1r.png)
 
 ## Python3
 
