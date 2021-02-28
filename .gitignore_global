@@ -105,7 +105,6 @@ pythonenv*
 __pycache__/
 local_settings.py
 media
-bin/
 
 # Django.Python Stack #
 #######################
@@ -178,7 +177,9 @@ pytestdebug.log
 
 # Roger-That #
 ##############
+download/
 downloads/
+_roger-that/
 _0_roger-that/
 roger-that/
 roger-that.md

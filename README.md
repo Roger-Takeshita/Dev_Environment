@@ -14,13 +14,16 @@
     - [NVM (Node Version Manager)](#nvm-node-version-manager)
     - [Nodemon](#nodemon)
   - [PostgreSQL](#postgresql)
-    - [Import Entire DB](#import-entire-db)
+    - [pg_dump](#pg_dump)
+    - [pg_restore](#pg_restore)
   - [MongoDB](#mongodb)
     - [Start MongoDB Service](#start-mongodb-service)
     - [Stop MongoDB Service](#stop-mongodb-service)
     - [Import Dump](#import-dump)
     - [Roto 3T](#roto-3t)
   - [Python3](#python3)
+    - [Set Python3 As Default Python](#set-python3-as-default-python)
+    - [Flake8 Linter](#flake8-linter)
     - [Django](#django)
 
 # MACOS DEV ENVIRONMENT
@@ -368,12 +371,20 @@ Start PostgreSQL
   brew services start postgresql
 ```
 
-### Import Entire DB
+### pg_dump
+
+[Go Back to Contents](#table-of-contents)
+
+```Bash
+  time pg_dump -j 8 -Fd paste_your_postgres_connection_url_here -f 2021-02-24_dump
+```
+
+### pg_restore
 
 [Go Back to Contents](#contents)
 
 ```Bash
-  psql -f path/dumpfile.sql postgres
+  time pg_restore -j 8 -d your_database_name /Users/roger-that/Desktop/2021-02-24_dump
 ```
 
 ## MongoDB
@@ -463,6 +474,34 @@ Python packages
   # sqlparse   0.4.1
   # wheel      0.36.1
 ```
+
+### [Set Python3 As Default Python](https://dev.to/malwarebo/how-to-set-python3-as-a-default-python-version-on-mac-4jjf)
+
+[Go Back to Contents](#table-of-contents)
+
+```Bash
+  # Look where Python is installed
+  ls -l /usr/local/bin/python*
+
+  # lrwxr-xr-x  1 roger-that  admin  24 24 Feb 08:48 /usr/local/bin/python -> /usr/local/bin/python3.9
+  # lrwxr-xr-x  1 roger-that  admin  38 24 Feb 08:42 /usr/local/bin/python3 -> ../Cellar/python@3.9/3.9.2/bin/python3
+  # lrwxr-xr-x  1 roger-that  admin  45 24 Feb 08:42 /usr/local/bin/python3-config -> ../Cellar/python@3.9/3.9.2/bin/python3-config
+  # lrwxr-xr-x  1 roger-that  admin  40 24 Feb 08:42 /usr/local/bin/python3.9 -> ../Cellar/python@3.9/3.9.2/bin/python3.9
+  # lrwxr-xr-x  1 roger-that  admin  47 24 Feb 08:42 /usr/local/bin/python3.9-config -> ../Cellar/python@3.9/3.9.2/bin/python3.9-config
+
+  # Set python 3.9 as default python
+  ln -s -f /usr/local/bin/python3.9 /usr/local/bin/python
+```
+
+### Flake8 Linter
+
+[Go Back to Contents](#table-of-contents)
+
+- [Flake8](https://flake8.pycqa.org/en/latest/)
+
+  ```Bash
+    python -m pip install flake8
+  ```
 
 ### Django
 
