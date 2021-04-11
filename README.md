@@ -25,6 +25,8 @@
     - [Set Python3 As Default Python](#set-python3-as-default-python)
     - [Flake8 Linter](#flake8-linter)
     - [Django](#django)
+  - [jq](#jq)
+  - [Tmux](#tmux)
 
 # MACOS DEV ENVIRONMENT
 
@@ -519,4 +521,20 @@ Check django version
 ```Bash
   django-admin --version
   # 3.1.4
+```
+
+## jq
+
+[Go Back to Contents](#contents)
+
+```Bash
+  brew install jq
+```
+
+## Tmux
+
+[Go Back to Contents](#contents)
+
+```Bash
+  brew install tmux
 ```
