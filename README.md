@@ -27,6 +27,22 @@
     - [Django](#django)
   - [jq](#jq)
   - [Tmux](#tmux)
+- [WINDOWS](#windows)
+  - [Install Ubuntu](#install-ubuntu)
+  - [Oh-My-Zsh](#oh-my-zsh-1)
+    - [Update Agnoster Theme](#update-agnoster-theme)
+  - [Oh-My-Bash](#oh-my-bash)
+    - [Update Agnoster Theme](#update-agnoster-theme-1)
+  - [Install Fonts](#install-fonts)
+  - [Tmux](#tmux-1)
+  - [Update Node.js](#update-nodejs)
+- [BKP](#bkp)
+  - [PostgreSQL](#postgresql-1)
+    - [Backup All DBs](#backup-all-dbs)
+    - [Restore Dumps](#restore-dumps)
+  - [MongoDB](#mongodb-1)
+  - [Backup All DBs](#backup-all-dbs-1)
+  - [Restore Dumps](#restore-dumps-1)
 
 # MACOS DEV ENVIRONMENT
 
@@ -537,4 +553,95 @@ Check django version
 
 ```Bash
   brew install tmux
+```
+
+# WINDOWS
+
+- [Have a great looking terminal and a more effective shell with Oh my Zsh on WSL 2 using Windows](https://pascalnaber.wordpress.com/2019/10/05/have-a-great-looking-terminal-and-a-more-effective-shell-with-oh-my-zsh-on-wsl-2-using-windows/)
+
+## Install Ubuntu
+
+```Bash
+  # Powershell
+  Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
+## Oh-My-Zsh
+
+```Bash
+  sudo apt-get install zsh curl git
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
+```
+
+### Update Agnoster Theme
+
+## Oh-My-Bash
+
+```Bash
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+```
+
+### Update Agnoster Theme
+
+```Bash
+  vim ~/.oh-my-bash/themes/agnoster/agnoster.theme.sh
+```
+
+## Install Fonts
+
+```Bash
+  # Powershell
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  .\install.ps1
+```
+
+## Tmux
+
+```Bash
+  cd
+  git clone https://github.com/gpakosz/.tmux.git
+  ln -s -f .tmux/.tmux.conf
+  cp .tmux/.tmux.conf.local .
+```
+
+## Update Node.js
+
+- [Install nvm](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/)
+
+```Bash
+  curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+```
+
+# BKP
+
+## PostgreSQL
+
+### Backup All DBs
+
+```Bash
+  pg_dumpall > postgres_dbs.sql
+```
+
+### Restore Dumps
+
+```Bash
+  pgsql -f postgres_dbs.sql postgres
+```
+
+## MongoDB
+
+## Backup All DBs
+
+```Bash
+  mongodump
+```
+
+> This command will create a `dump` folder in your current location
+
+## Restore Dumps
+
+```Bash
+  mongorestore  dump/
 ```
